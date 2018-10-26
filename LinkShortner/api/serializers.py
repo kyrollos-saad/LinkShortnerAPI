@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from LinkShortner.models import Links
 
+
 class LinksSerializer(serializers.ModelSerializer):
     class Meta:
         model = Links
@@ -12,3 +13,4 @@ class LinksSerializer(serializers.ModelSerializer):
             'ios_primary',
             'ios_fallback',
         ]
+        read_only_fields = ['slug']

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - AwesomeLinkShortner.com</title>
+</head>
+<body>
+<div style="margin: 20px; padding: 8px">
+    <h2>Login</h2>
+    <form action="{% url 'link_shortner:logout_view' %}" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <h4>current logged in user is: {{ current_user }}</h4>
+                </td>
+                <td>
+                    <button type="submit">MY_LOGOUT</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form action="{% url 'link_shortner:login_view' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">MY_LOGIN</button>
+    </form>
+</div>
+</body>
+</html>

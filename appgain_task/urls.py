@@ -18,5 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/shorten/', include('LinkShortner.api.urls')),
+    path('shortlinks/', include('LinkShortner.api.urls')),
+    path('shortlinks_gui/', include('LinkShortner.urls')),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider'))
 ]
